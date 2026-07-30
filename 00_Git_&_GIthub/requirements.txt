@@ -1,0 +1,96 @@
+#ALL THE IMPORTANT GIT COMMANDS IN HINDI
+# Ye commands beginners ke liye bahut useful hain jo Git aur GitHub seekh rahe hain.
+# Har command ke aage uska short description diya gaya hai taaki aapko samajhne mein aasani ho.
+# Har command ko apne terminal/command prompt mein chalayein.
+# Commands ko step-by-step follow karein jaise aap ek naya project shuru kar rahe hain.
+# Har section ke beech ek khaali line chhodi gayi hai taaki readability bani rahe.
+
+fkfbkaejsbfkb
+# --- GIT CORE CONFIGURATION ---
+git --version              # Check karo Git install hai ya nahi
+git config --global user.name "Your Name"    # Git commits ke liye apna naam set karein
+git config --global user.email "email@id.com" # Git commits ke liye apni email ID set karein
+git config --list          # Check karein ki name aur email sahi save hue ya nahi
+
+# --- REPOSITORY STARTUP ---
+git init                   # Is folder ko ek Git repository banayein (Sirf 1 baar chalana hai)
+git status                 # Check karein kaunsi files modified hain ya abhi track nahi ho rahi
+
+# --- STAGING & SAVING (THE SNAPSHOT) ---
+git add <file_name>        # Kisi specific file ko save karne ke liye line mein lagayein
+git add .                  # Saari ki saari badli hui files ko stage (loading zone) mein bhejein
+git status                 # Dubara check karein ki files green (staged) hui ya nahi
+git commit -m "message"    # Staged files ka ek permanent snapshot (version) save karein
+
+# --- TRACKING & HISTORY ---
+git log                    # Purane saare commits ki history aur IDs dekhne ke liye
+git status                 # Confirm karein ki "nothing to commit, working tree clean" hai
+
+# --- BRANCHING & NAVIGATION (PARALLEL WORK) ---
+git branch                 # Saari branches ki list dekhein (Star '*' current branch batata hai)
+git branch bug-fix         # 'bug-fix' naam ki ek nayi branch banayein (Main code safe rahega)
+git switch bug-fix         # Apni working directory ko 'bug-fix' branch par shift karein
+git switch main            # Wapas apne primary code (main branch) par lautne ke liye
+git switch -c dark-mode    # Nayi branch 'dark-mode' banayein AUR turant uspar switch karein
+git checkout -b orange-mode # Purana tarika nayi branch banane aur switch karne ka (Same as switch -c)
+
+# --- MERGING & INTEGRATION ---
+git merge bug-fix          # 'bug-fix' ka sara kaam 'main' branch mein milane ke liye
+                           # (Yaad rahe: Pehle 'main' par switch karein, fir merge chalayein)
+
+# --- CLEANUP & MAINTENANCE ---
+git branch -m old new      # Kisi branch ka naam badalne ke liye (Rename)
+git branch -d branch-name  # Kaam khatam hone ke baad faltu branch ko delete karne ke liye
+git checkout <branch-name> # Kisi purani branch ya specific commit par wapas jane ke liye
+
+# --- GIT DIFF (CODE COMPARISON) ---
+git diff                   # Unstaged changes dekhein (Working directory vs Staging area)
+git diff --staged          # Check karein ki commit karne se pehle kya-kya stage ho chuka hai
+git diff branch1 branch2   # Do alag branches ke beech ka code difference check karein
+git diff commit1 commit2   # Do specific snapshots (hashes) ke beech ke badlav dekhein
+
+# --- GIT STASH (TEMPORARY HIDING) ---
+# Logic: Jab kaam adha hua ho aur branch badalni ho, toh code "chhupane" ke liye.
+git stash                  # Adha adhura kaam temporary save karke working directory saaf karein
+git stash save "message"   # Stash ko pehchanne ke liye ek naam ke saath save karein
+git stash list             # Saare chhupaye huye (stashed) kaam ki list dekhein
+git stash apply            # Sabse naya stash wapas layein (par stash list se delete nahi hoga)
+git stash pop              # Stash ko wapas layein AUR list se delete kar dein (Cleanest way)
+git stash drop             # Kisi specific stash ko delete karne ke liye
+git stash clear            # Saare purane stashes ko ek saath khatam karne ke liye
+
+# --- GIT TAGGING (VERSIONING) ---
+# Logic: Important milestones (jaise Project v1.0) ko mark karne ke liye.
+git tag v1.0               # Current commit par ek simple tag lagayein
+git tag -a v1.0 -m "msg"   # Version notes ke saath annotated tag banayein (Professional way)
+git tag                    # Saare lagaye huye versions/tags ki list dekhein
+git push origin v1.0       # Kisi specific version tag ko GitHub par upload karein
+git tag -d v1.0            # Local computer se tag delete karne ke liye
+
+# --- GIT REBASE (CLEAN HISTORY) ---
+# Logic: Feature branch ko 'main' ke sabse latest commit par "re-base" karna.
+git checkout feature-branch # Pehle us branch par jayein jise update karna hai
+git rebase main            # 'main' ke latest badlav apni branch ke piche "chipkayein"
+git add <resolved-files>   # Conflicts solve karne ke baad files stage karein
+git rebase --continue      # Conflict solve karke rebase process ko aage badhayein
+
+# --- GIT REFLOG (THE TIME MACHINE) ---
+# Logic: Git ki "History of History". Agar koi commit delete bhi ho jaye, Reflog use dhoond lega.
+git reflog                 # Local repository mein hui har choti activity ki list dekhein
+git reflog <commit-hash>   # Kisi specific commit ki history track karein
+
+# --- GIT RESET (UNDOING STUFF) ---
+# ⚠️ WARNING: '--hard' se file ke andar ka unsaved code permanently udd jayega.
+git reset --hard <hash>    # Repository ko seedha us specific commit par wapas le jayein
+git reset --hard HEAD@{1}  # Reflog ka use karke apne pichle step par turant wapas jayein
+
+# --- REMOTE REPOSITORY (GITHUB CONNECTIVITY) ---
+git remote -v              # Check karein ki local repo kis online URL se judi hai
+git remote add origin <url> # Apne local code ko GitHub ki repository se link karein
+git push origin main       # Local 'main' branch ka saara code GitHub par upload karein
+git push -u origin main    # Upload karein AUR 'origin main' ko hamesha ke liye default set karein
+
+# --- COLLABORATION & OPEN SOURCE ---
+git remote add upstream <url> # Original repo (jahan se fork kiya) ko 'upstream' ke naam se add karein
+git fetch <remote-name>    # Sirf check karein ki cloud par kya badlav huye hain (download nahi hoga)
+git pull origin main       # Cloud se latest code download karein AUR apne local code mein merge karein
