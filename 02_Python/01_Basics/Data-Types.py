@@ -9,11 +9,22 @@ height = 5.7
 # Define a boolean variable
 is_student = True
 
+# Rules of declaring variables in Python:
+# 1. Variable names must start with a letter (a-z, A-Z) or underscore (_)
+# 2. Variable names can only contain alphanumeric characters and underscores (a-z, A-Z, 0-9, _)
+# 3. Variable names are case-sensitive (age, Age, and AGE are different variables)
+# 4. Variable names cannot be Python reserved keywords (if, for, while, def, class, etc.)
+# 5. Variable names should be descriptive and follow snake_case convention (e.g., user_age, first_name)
+# 6. Avoid single letter names except for loop counters (i, j, k)
+# 7. Variable names cannot contain spaces
+
 # Print the values and their types
 print("Name:", name, "Type:", type(name))
 print("Age:", age, "Type:", type(age))
 print("Height:", height, "Type:", type(height))
 print("Is Student:", is_student, "Type:", type(is_student))
+
+
 
 # list variable
 # list are used to store multiple items in a single variable. Lists are ordered, changeable, and allow duplicate values.
