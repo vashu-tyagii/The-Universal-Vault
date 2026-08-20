@@ -1,0 +1,40 @@
+-- SELECT ALL COLUMN FROM EMPLOYEES 
+SELECT * FROM employees ;
+
+-- SELECTING SPEC COLUMNS 
+SELECT first_name,last_name,salary FROM employees ;
+
+-- SELECTING DISTINCT DEP_ID FROM EMPLOYEES 
+SELECT DISTINCT department_id FROM employees ;
+
+-- FINDING ALL EMPLOYEES WHERE SALARY IS GREATER THAN 50K
+SELECT * FROM employees
+    WHERE salary > 50000;
+
+-- SELECT ALL EMPLOYEES HIRED ON SPECIFIC DATE 
+SELECT * FROM employees
+    WHERE hire_date = '2023-01-31';
+
+-- SELECT EMPLOYEES BY SALARY IN DESC 
+SELECT * FROM employees
+    ORDER BY salary DESC;
+
+-- SHOWING TOP 5 HIGH PAYED EMPLOYEES 
+SELECT * FROM employees
+    ORDER BY salary DESC LIMIT 5 ;
+
+-- FIND EMAIL WITH GMAIL 
+SELECT email FROM employees
+    WHERE email LIKE "%gmail%";
+
+-- FIND EMPLOYEES ARE NOT IN SPEC DEPARTMENT
+SELECT * FROM employees
+    WHERE department_id != 2 AND 3;
+
+-- USING CASE STATEMENT
+SELECT *,
+    CASE 
+        WHEN salary >= 40000 THEN 'Senior'
+        WHEN salary >= 30000 THEN 'Junior'
+    END AS Emp_position 
+FROM employees;
