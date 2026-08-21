@@ -8,26 +8,24 @@ FROM orders;
 SELECT *
 FROM employees
 WHERE department = 'Sales';
--- Fixed quotes
 -- 4. Fetch the employee names and their salaries with column aliases "Name" and "Income"
 SELECT CONCAT(first_name, ' ', last_name) AS Name,
     salary AS Income
 FROM employees;
 -- 5. Show all products buy price above 50 Dollar.
 SELECT *
-FROM orders -- plural table name
+FROM orders
 WHERE price >= 50;
 -- 6. Fetch the top 2 highest paid employees in our company.
 SELECT *
 FROM employees
-ORDER BY salary DESC -- DESC for highest
+ORDER BY salary DESC
 LIMIT 2;
 -- 7. Get employees who are either in Sales or have a salary above 30,000.
 SELECT *
 FROM employees
 WHERE department = 'Sales'
     OR salary >= 30000;
--- Fixed 'sales' to 'salary'
 -- 8. Fetch products with a price between 20 and 100.
 SELECT *
 FROM products
@@ -38,11 +36,11 @@ FROM products
 WHERE product_name IN ('Laptop', 'Tablet');
 -- 10. Find employee names starting with 'J'
 SELECT *
-FROM employees -- corrected table name
+FROM employees
 WHERE first_name LIKE 'J%';
 -- 11. Case insensitive search for employee names containing 'son'
 SELECT *
-FROM employees -- corrected table name
+FROM employees
 WHERE first_name LIKE '%son%';
 -- 12. Display employee names along with their salary category as 'High' if above 70,000, else 'Low'
 SELECT *,
@@ -51,9 +49,7 @@ SELECT *,
         ELSE 'LOW'
     END AS RANK_FOR_SALARY
 FROM employees;
--- ====================================================================
--- 13. MISSING QUESTION ANSWERS ADDED HERE
--- ====================================================================
+-- Additional queries
 -- Show the delivery date, but if it is NULL, display 'Pending'
 SELECT order_id,
     COALESCE(delivery_date, 'Pending') AS delivery_status
