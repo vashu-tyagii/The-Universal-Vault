@@ -4,3 +4,6 @@
 -- Update one project's budget by increasing it 15%.
 -- Delete one project by project_id.
 -- Add a new column status (VARCHAR) to projects, then drop it again.
+d
+SSL
+s
