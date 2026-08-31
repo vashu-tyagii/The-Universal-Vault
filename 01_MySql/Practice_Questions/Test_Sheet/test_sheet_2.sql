@@ -1,0 +1,6 @@
+-- Create a new table projects with: project_id (PK), project_name, department_id (FK to departments), budget (DECIMAL).
+-- Add a CHECK constraint ensuring budget is always positive.
+-- Insert 3 rows into projects.
+-- Update one project's budget by increasing it 15%.
+-- Delete one project by project_id.
+-- Add a new column status (VARCHAR) to projects, then drop it again.
