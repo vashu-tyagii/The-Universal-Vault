@@ -1,10 +1,12 @@
 # SQL Subquery Practice Bootcamp (70 Questions)
+
 **Database:** `local_db`  
 **Tables Available:** `departments`, `employees`, `projects`, `project_assignments`
 
 ---
 
 ## 🟢 Category 1: Single-Row Subquery (10 Questions)
+
 1. Find the employee(s) who earn the highest salary in the company.
 2. Find all employees who earn less than the average salary of the entire company.
 3. Find employees who were hired earlier than the employee with `emp_id = 105`.
@@ -19,6 +21,7 @@
 ---
 
 ## 🟡 Category 2: Multi-Row Subquery (10 Questions)
+
 1. Find all employees who work in departments located in 'Bangalore', 'Hyderabad', or 'Mumbai'.
 2. Find employees whose salaries match the salary of *any* manager in the company (`manager_id IS NULL`).
 3. Find employees who do *not* work in the 'Engineering' or 'Finance' departments.
@@ -33,6 +36,7 @@
 ---
 
 ## 🔵 Category 3: Multi-Column Subquery (10 Questions)
+
 1. Find employees who have the minimum salary in their respective departments (`(department_id, salary) IN (...)`).
 2. Find employees who have the maximum salary in their respective departments.
 3. Find employees whose `department_id` and `salary` match the department and salary of employee `102`.
@@ -47,6 +51,7 @@
 ---
 
 ## 🟣 Category 4: Correlated Subquery (10 Questions)
+
 1. Find employees whose salary is greater than the average salary of their own department.
 2. Find employees whose salary is the maximum in their respective department.
 3. Find employees who earn less than the average salary of their department.
@@ -61,6 +66,7 @@
 ---
 
 ## 🟤 Category 5: Nested Subquery (10 Questions)
+
 1. Find employees working in departments located in 'Bangalore' who earn more than the company average salary.
 2. Find employees assigned to projects managed by departments located in 'Hyderabad'.
 3. Find employees whose department is located in a city where the department name starts with 'E'.
@@ -75,6 +81,7 @@
 ---
 
 ## ⚫ Category 6: Scalar Subquery (10 Questions)
+
 1. List all employee names and display the total company employee count next to each row.
 2. List all employees along with the average salary of the entire company in a separate column.
 3. List all employees along with the maximum salary of the company as an extra column.
@@ -89,6 +96,7 @@
 ---
 
 ## 🔴 Category 7: Inline View / Derived Table (10 Questions)
+
 1. Find the average of the maximum salaries per department using a derived table.
 2. Find departments whose total salary expense is greater than 300,000 using an inline view.
 3. Find the top 3 highest-paid employees by wrapping a sorted query in an inline view.
