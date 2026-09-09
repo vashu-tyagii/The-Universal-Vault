@@ -1,4 +1,11 @@
+beautifulsoup4==4.15.0
+greenlet==3.5.5
+mysql-connector-python==26.7.0
 numpy==2.5.1
 pandas==3.0.5
+pip==26.2.1
 python-dateutil==2.9.0.post0
 six==1.17.0
+soupsieve==2.9.2
+sqlalchemy==2.0.52
+typing-extensions==4.16.0

@@ -23,9 +23,9 @@ def check_env():
     libraries = {
         "bs4": "beautifulsoup4",
         "mysql.connector": "mysql-connector-python",
+        "sqlalchemy": "SQLAlchemy",
         "numpy": "numpy",
         "pandas": "pandas",
-        "requests": "requests"
     }
 
     missing_libs = []
