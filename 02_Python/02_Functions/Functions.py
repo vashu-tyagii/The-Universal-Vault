@@ -1,16 +1,23 @@
 from typing import Any
 
+# Functions
+# A function is a reusable block of code that performs a specific task.
+# It is defined with `def` and called by writing its name followed by `()`.
+
 
 def fun() -> None:
+    """Print a welcome message."""
     print("Welcome to GFG")
 
 
 fun()
 
-# Function Arguments
+# Function arguments
+# Arguments are values passed to a function when it is called.
 
 
 def even_odd(x: int) -> str:
+    """Return whether an integer is even or odd."""
     if x % 2 == 0:
         return "Even"
     else:
@@ -20,22 +27,26 @@ def even_odd(x: int) -> str:
 print(even_odd(16))
 print(even_odd(7))
 
-# Types of Function Arguments
+# Types of function arguments
 
-#  Default argument: Default argument use a predefined value when no value is passed during the function call.
+# 1. Default arguments
+# A default argument has a predefined value that is used when no value is passed.
 
 
 def my_fun(x: int, y: int = 50) -> None:
+    """Display a required argument and an argument with a default value."""
     print("x: ", x)
     print("y: ", y)
 
 
 my_fun(10)
 
-# 2. Keyword Arguments: pass values using parameter names, so argument order does not matter.
+# 2. Keyword arguments
+# Keyword arguments are passed using parameter names, so their order does not matter.
 
 
 def student(fname: str, lname: str) -> None:
+    """Display a student's first and last name."""
     print(fname, lname)
 
 
@@ -43,9 +54,11 @@ student(fname='Geeks', lname='Practice')
 student(lname='Practice', fname='Geeks')
 
 
-# 3. Positional Arguments: values are assigned to parameters based on their order in the function call.
+# 3. Positional arguments
+# Positional arguments are assigned to parameters according to their order.
 
 def name_age(name: str | int, age: int | str) -> None:
+    """Display a name and age using positional arguments."""
     print("Hi, I am", name)
     print("My age is ", age)
 
@@ -56,10 +69,14 @@ name_age("Olivia", 27)
 print("Case-2:")
 name_age(27, "Olivia")
 
-# 4. Arbitrary Arguments: allow functions to accept multiple values. This is done using two special symbols:
+# 4. Arbitrary arguments
+# Arbitrary arguments allow a function to accept any number of values:
+# *args stores extra positional arguments in a tuple.
+# **kwargs stores extra keyword arguments in a dictionary.
 
 
 def my_fun_args(*args: Any, **kwargs: Any) -> None:
+    """Display arbitrary positional and keyword arguments."""
     print("Non-Keyword Arguments (*args):")
     for arg in args:
         print(arg)
@@ -71,11 +88,13 @@ def my_fun_args(*args: Any, **kwargs: Any) -> None:
 
 my_fun_args("Hey", "Welcome", first="Geeks", mid="for", last="Geeks")
 
-# Function within Functions
-# A function defined inside another function is called an inner function (or nested function). It is used to organize related logic and access variables from the outer function.
+# Nested functions
+# A function defined inside another function is called an inner or nested function.
+# It can access variables defined in the enclosing function.
 
 
 def f1() -> None:
+    """Demonstrate a nested function and an enclosing variable."""
     s = 'I love GeeksForGeeks'
 
     def f2() -> None:
@@ -86,11 +105,13 @@ def f1() -> None:
 
 f1()
 
-# Return Statement
-# Return is used to end a function and send a value back to the caller. It can return any data type, multiple values (packed into a tuple), or None if no value is given.
+# Return statement
+# `return` ends a function and sends a value back to the caller.
+# A function can return any data type, multiple values as a tuple, or None.
 
 
 def sq_value(num: int) -> int:
+    """Return the square of a number."""
     return num**2
 
 
