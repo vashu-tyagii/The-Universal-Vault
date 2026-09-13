@@ -55,8 +55,6 @@ Do these in order. One section → check yourself → then move to the next.
 4. Find the sum, max, and min of a list of numbers without using built-in sum()/max()/min() —
    write it with a loop.
 5. Reverse a list without using the built-in `.reverse()` method.
-6. Given a list of numbers, create a new list containing only the even numbers
-   (use a for loop first, then try it again using list comprehension).
 
 ---
 
