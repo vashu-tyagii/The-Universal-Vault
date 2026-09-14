@@ -91,7 +91,7 @@ print("\nExample 6: Catching multiple exceptions")
 try:
     x = 10
     y = "5"
-    result = x + y
+    result = x + y  # type: ignore
 except TypeError:
     print("TypeError: You cannot add an integer and a string directly.")
 except ValueError:
