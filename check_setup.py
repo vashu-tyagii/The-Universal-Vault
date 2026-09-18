@@ -26,6 +26,8 @@ def check_env():
         "sqlalchemy": "SQLAlchemy",
         "numpy": "numpy",
         "pandas": "pandas",
+        "streamlit": "streamlit",
+        
     }
 
     missing_libs = []
