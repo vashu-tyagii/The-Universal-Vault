@@ -1,6 +1,30 @@
 """
-Topic: Basic app structure and running Streamlit — st.title, st.header, 
-st.write, st.text, and running the app with `streamlit run app.py`
+Topic: Basic Streamlit app structure
+
+Run this file in a terminal with:
+	streamlit run 01_app_structure_setup.py
+
+Streamlit displays the Python code as a web page.
 """
 
-# Practice here
+import streamlit as st
+
+
+# Configure the browser tab title and page layout.
+st.set_page_config(page_title="My First Streamlit App",
+                   page_icon="🔐", layout="centered")
+
+# st.title() adds the main title.
+st.title("My First Streamlit App")
+
+# st.header() adds a section heading.
+st.header("Welcome")
+
+# st.write() displays text, numbers, and Python objects.
+st.write("This page was created with Python and Streamlit.")
+st.write("2 + 3 =", 2 + 3)
+
+# st.text() displays simple plain text.
+st.text("This is plain text.")
+
+# Save the file and run the command in the note above to view the app.
